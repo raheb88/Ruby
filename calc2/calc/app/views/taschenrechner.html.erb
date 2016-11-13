@@ -1,0 +1,22 @@
+<%= @taschenrechner %>
+
+<h1> Taschenrechner</h1>
+<div id = "anzeige"> <%= @i %> </div>
+<div id = "tasten" class = "tasten" >
+	<% for @i in 0..9 do %>
+		<div id = <%= "b" +@i.to_s %> class = "calcbutton">
+			<%= @i %>
+		</div>
+	<% end%>
+	<div id = "clear" class = "calcbutton" > CL</div>
+	<div id = "plus"  class = "calcbutton" >+</div> 
+</div>
+
+
+<%= link_to "Berechnen",
+    controller: "calc",
+    action: "index",
+             @i: index %>
+     <br/>
+<% end %>
+
